@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 
+
+import { Student } from './student.model'
+
 @Component({
   selector: 'app-student-list',
   templateUrl: './student-list.component.html',
@@ -7,7 +10,7 @@ import { Component, Input } from '@angular/core';
 })
 export class StudentListComponent {
 
-  @Input() studentList = []
+  @Input() studentList: Student[] = []
 
 
 }
