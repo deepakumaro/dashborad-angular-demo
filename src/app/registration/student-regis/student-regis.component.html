@@ -1,9 +1,13 @@
+<form (submit)="saveStudent(formStudent)" #formStudent="ngForm">
 <mat-card>
   <mat-form-field>
-    <input matInput type="text" [(ngModel)]="studentName">
+    <input matInput type="text" name="studentName" ngModel required #studentName="ngModel">
+    <mat-error *ngIf="studentName">Please enter student name</mat-error>
   </mat-form-field>
   <mat-form-field>
-    <textarea rows="6" matInput [(ngModel)]="studentDis"></textarea>
+    <textarea rows="6" matInput name="studentDis" ngModel required #studentDis="ngModel"></textarea>
+    <mat-error *ngIf="studentDis">Please enter a student discription</mat-error>
   </mat-form-field>
-  <button mat-raised-button color="accent" (click)="saveStudent()">Submit</button>
+  <button mat-raised-button color="accent" type="submit">Submit</button>
 </mat-card>
+</form>
