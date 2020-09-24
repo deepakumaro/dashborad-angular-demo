@@ -1,0 +1,10 @@
+<mat-accordion *ngIf="studentList.length > 0">
+  <mat-expansion-panel *ngFor="let student of studentList">
+    <mat-expansion-panel-header>
+      {{student.name}}
+    </mat-expansion-panel-header>
+    <p>{{student.dis}}</p>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<p class="info-text mat-body-2" *ngIf="studentList.length == 0"> No student to Show</p>
