@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-
-import { Student } from '../student-list/student.model'
+import { StudentService } from '../student.service';
 
 @Component({
   selector: 'app-student-regis',
@@ -13,19 +12,18 @@ export class StudentRegisComponent {
 
   studentName = "";
   studentDis = "";
-  @Output() studentCreated = new EventEmitter<Student>();
 
+
+  constructor(public studentService : StudentService){}
 
   saveStudent(form: NgForm) {
     if (form.invalid) {
       return;
     }
-    const student: Student = {
-      name: form.value.studentName,
-      dis: form.value.studentDis
-    }
 
-    this.studentCreated.emit(student);
+   this.studentService.addStudents(form.value.studentName,form.value.studentDis);
+   form.resetForm();
+
   }
 
 }

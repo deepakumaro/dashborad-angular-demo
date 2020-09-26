@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import { Student } from './registration/student-list/student.model'
 
 @Component({
   selector: 'app-root',
@@ -8,10 +7,6 @@ import { Student } from './registration/student-list/student.model'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  students: Student[] = [];
 
-  onStudentAdded(student) {
-    this.students.push(student)
-  }
 
 }
