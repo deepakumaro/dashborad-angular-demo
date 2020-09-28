@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { StudentRegisComponent } from './registration/student-regis/student-regis.component';
@@ -18,7 +19,7 @@ import { StudentListComponent } from './registration/student-list/student-list.c
     AppComponent,
     StudentRegisComponent,
     HeaderComponent,
-    StudentListComponent
+    StudentListComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,9 +29,10 @@ import { StudentListComponent } from './registration/student-list/student-list.c
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

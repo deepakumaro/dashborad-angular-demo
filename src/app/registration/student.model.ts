@@ -1,4 +1,5 @@
 export interface Student {
-  name: String,
-  dis: String
+  _id: string;
+  name: String;
+  dis: String;
 }

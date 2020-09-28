@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 
 import { StudentService } from '../student.service';
 
+
 @Component({
   selector: 'app-student-regis',
   templateUrl: './student-regis.component.html',
@@ -21,7 +22,11 @@ export class StudentRegisComponent {
       return;
     }
 
-   this.studentService.addStudents(form.value.studentName,form.value.studentDis);
+   this.studentService.addStudents(
+     form.value.id,
+     form.value.studentName,
+     form.value.studentDis
+   );
    form.resetForm();
 
   }
